@@ -1,0 +1,35 @@
+{
+  "categories": [
+    {
+      "id": "mountains",
+      "group": "Nature",
+      "title": "Mountains"
+    },
+    {
+      "id": "forest",
+      "group": "Nature",
+      "title": "Forests"
+    }
+  ],
+  "entries": [
+    {
+      "category": "mountains",
+      "image": "/assets/images/michelle-mcewen-unsplash.jpg",
+      "title": "Mountain Shadow",
+      "location": "Made Up National Park",
+      "camera": "Fujifilm X-T5",
+      "lens": "55-200mm",
+      "info": ["Photo by Michelle McEwen on Unsplash"]
+    },
+    {
+      "category": "forest",
+      "style": "wide",
+      "image": "/assets/images/sarah-sheedy-unsplash.jpg",
+      "title": "Autumn Trees",
+      "location": "Made Up National Park",
+      "camera": "Fujifilm X-T5",
+      "lens": "55-200mm",
+      "info": ["Photo by Sarah Sheedy on Unsplash"]
+    }
+  ]
+}

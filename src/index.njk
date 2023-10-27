@@ -1,0 +1,86 @@
+---
+pagination:
+  data: photos.categories
+  size: 1
+  alias: category
+permalink: "/{% if pagination.pageNumber > 0%}{{ category.id }}/{% endif %}"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ config.title }} | {{ config.subtitle }}</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/index.css"/>
+  </head>
+  <body class="w-full h-full flex justify-center py-12 font-light">
+    <main class="w-6/8">
+      <div class="xl:fixed w-full xl:w-64 px-8 xl:px-0 xl:p-4 flex xl:flex-col gap-4">
+        <header>
+          <h1 class="text-xl">{{ config.title }}</h1>
+          <h3 class="text-sm">{{ config.subtitle }}</h3>
+        </header>
+        <nav class="text-sm">
+          <ul class="flex gap-4 xl:block">
+            {% for item in pagination.pages %}
+              <li class="py-0.5">
+                <a href="{{ pagination.hrefs[loop.index0] }}" class="{% if category.id == item.id %}underline{% endif %} hover:underline">
+                  <span class="text-stone-600 font-bold">{{ item.group }}</span>
+                  / {{ item.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      <div class="ml-0 xl:ml-64 px-4 max-w-5xl">
+        {% for photo in photos.entries %}
+          {% if photo.category == category.id %}
+            {% if photo.style == "wide" %}
+              <div class="flex flex-col items-start p-4">
+                <img src="{{ photo.image }}"/>
+                <div class="text-xs md:text-sm w-full mt-2 font-light flex justify-between gap-4 items-center">
+                  <div class="flex flex-col md:flex-row gap-0.5 md:gap-2">
+                    <h2 class="font-bold text-stone-600">{{ photo.title }}</h2>
+                    <p class="italic">{{ photo.location }}</p>
+                  </div>
+                  <div class="flex flex-col text-right md:text-left md:flex-row gap-0.5 md:gap-2">
+                    <p class="text-xs">{{ photo.camera }}, {{ photo.lens }}</p>
+                    <p class="text-xs">
+                      {% for info in photo.info %}
+                        {{ info }}
+                        {% if not loop.last %}|{% endif %}
+                      {% endfor %}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <div class="flex flex-col xl:flex-row items-start p-4">
+                <div class="xl:max-w-3xl">
+                  <img src="{{ photo.image }}"/>
+                </div>
+                <div class="text-sm w-full font-light xl:ml-2 flex justify-between gap-4 mt-2 xl:mt-0">
+                  <div class="flex flex-col md:gap-2">
+                    <h2 class="font-bold text-stone-600">{{ photo.title }}</h2>
+                    <p class="py-0.5 italic">{{ photo.location }}</p>
+                  </div>
+                  <div class="flex flex-col text-right md:text-left md:gap-2">
+                    <p class="py-0.5 text-xs">{{ photo.camera }}, {{ photo.lens }}</p>
+                    <p class="py-0.5 text-xs">
+                      {% for info in photo.info %}
+                        {{ info }}
+                        {% if not loop.last %}|{% endif %}
+                      {% endfor %}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </main>
+  </body>
+</html>
