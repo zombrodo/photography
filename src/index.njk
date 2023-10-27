@@ -45,7 +45,7 @@ permalink: "/{% if pagination.pageNumber > 0%}{{ category.id }}/{% endif %}"
                     <h2 class="font-bold text-stone-600">{{ photo.title }}</h2>
                     <p class="italic">{{ photo.location }}</p>
                   </div>
-                  <div class="flex flex-col text-right md:text-left md:flex-row gap-0.5 md:gap-2">
+                  <div class="flex flex-col text-right xl:text-left xl:flex-row gap-0.5 xl:gap-2">
                     <p class="text-xs">{{ photo.camera }}, {{ photo.lens }}</p>
                     <p class="text-xs">
                       {% for info in photo.info %}
@@ -61,14 +61,14 @@ permalink: "/{% if pagination.pageNumber > 0%}{{ category.id }}/{% endif %}"
                 <div class="xl:max-w-3xl">
                   <img src="{{ photo.image }}"/>
                 </div>
-                <div class="text-sm w-full font-light xl:ml-2 flex justify-between gap-4 mt-2 xl:mt-0">
-                  <div class="flex flex-col md:gap-2">
+                <div class="text-xs md:text-sm w-full font-light xl:ml-2 flex xl:flex-col justify-between gap-4 xl:gap-0 mt-2 xl:mt-0">
+                  <div class="flex flex-col">
                     <h2 class="font-bold text-stone-600">{{ photo.title }}</h2>
-                    <p class="py-0.5 italic">{{ photo.location }}</p>
+                    <p class="xl:py-0.5 italic">{{ photo.location }}</p>
                   </div>
-                  <div class="flex flex-col text-right md:text-left md:gap-2">
-                    <p class="py-0.5 text-xs">{{ photo.camera }}, {{ photo.lens }}</p>
-                    <p class="py-0.5 text-xs">
+                  <div class="flex flex-col text-right xl:text-left xl:gap-2">
+                    <p class="xl:py-0.5 text-xs">{{ photo.camera }}, {{ photo.lens }}</p>
+                    <p class="xl:py-0.5 text-xs">
                       {% for info in photo.info %}
                         {{ info }}
                         {% if not loop.last %}|{% endif %}
