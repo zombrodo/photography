@@ -51,7 +51,7 @@ Next, we need some images, which is what we define under entries
       {
       "category": "forest", // The unique id defined for the category above
       "style": "wide", // optional: this will modify the output depending on landscape or portrait pictures
-      "image": "/assets/images/sarah-sheedy-unsplash.jpg", // path to the image
+      "image": "src/assets/images/sarah-sheedy-unsplash.jpg", // path to the image
       "title": "Autumn Trees", // the title
       "location": "Made Up National Park", // a location or subtitle
       "camera": "Fujifilm X-T5", // the camera you used
@@ -73,12 +73,3 @@ Stock images used in the example:
 
 - Mountain Photo by [Michelle McEwen](https://unsplash.com/@michellem18?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-snow-covered-mountain-with-a-sky-background-pljPEMFQD34?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 - Tree Photo by [Sarah Sheedy](https://unsplash.com/@cestmoisheedy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/a-group-of-trees-with-yellow-and-orange-leaves-yXLkcFF8LpY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
-
-## TODO / Recommendations
-
-By default, images that come out of your camera are gonna be chonky. If you have
-time, it might be a good idea to take a look at [Eleventy's Image plugin](https://www.11ty.dev/docs/plugins/image/)
-which will definitely help load times. There's a super detailed tutorial
-on how you'd set it up [here](https://www.aleksandrhovhannisyan.com/blog/eleventy-image-plugin/).
-
-Otherwise, I hopefully intend to add it myself down the line :)

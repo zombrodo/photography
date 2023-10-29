@@ -14,7 +14,7 @@
   "entries": [
     {
       "category": "mountains",
-      "image": "/assets/images/michelle-mcewen-unsplash.jpg",
+      "image": "src/assets/images/michelle-mcewen-unsplash.jpg",
       "title": "Mountain Shadow",
       "location": "Made Up National Park",
       "camera": "Fujifilm X-T5",
@@ -24,7 +24,7 @@
     {
       "category": "forest",
       "style": "wide",
-      "image": "/assets/images/sarah-sheedy-unsplash.jpg",
+      "image": "src/assets/images/sarah-sheedy-unsplash.jpg",
       "title": "Autumn Trees",
       "location": "Made Up National Park",
       "camera": "Fujifilm X-T5",
